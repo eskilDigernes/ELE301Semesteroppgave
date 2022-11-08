@@ -1,4 +1,4 @@
-//lag tabellar
+///////////////////////////////////////////lag tabellar///////////////////////////////////////////
 
 DROP TABLE IF EXISTS "brukerinfo" CASCADE;
 CREATE TABLE "brukerinfo" (
@@ -50,7 +50,7 @@ CREATE TABLE "alarminfo" (
   PRIMARY KEY ("alarm_id")
 );
 
-//legg til rader i tabellar(NY QUERY!)
+/////////////////////////////////////legg til rader i tabellar(NY QUERY!)///////////////////////////////////////////
 
 INSERT INTO brukerinfo
 (kort_id, pinkode, etternavn, fornavn, epost,startdato, sluttdato)
@@ -104,13 +104,13 @@ INSERT INTO alarminfo (alarm_id, alarmbeskrivelse)
 VALUES(3, 'Ingen adgang!');
 
 
-//Få tak i brukerdata(NY QUERY!!)
+/////////////////////////////////////Få tak i brukerdata(NY QUERY!!)///////////////////////////////////////////
 
 SELECT * FROM brukerinfo
 WHERE kort_id::INT = 1001
 
 
-//Få tak i adgangslogg(NY QUERY!!)
+///////////////////////////////////////Få tak i adgangslogg(NY QUERY!!)///////////////////////////////////////////
 
 SELECT brukerinfo.kort_id, adgangsforesporsler.rom_id, adgangsforesporsler.tidspunkt,
 adgangsforesporsler.adgang 
@@ -119,7 +119,7 @@ WHERE brukerinfo.kort_id::INT = 1001 AND
 ((adgangsforesporsler.tidspunkt >'2020-09-07T12:15:00Z') AND (adgangsforesporsler.tidspunkt < '2025-09-07T12:15:00Z'))
 
 
-//Ikkje godkjente inpasseringsforsøk(NY QUERY!!)
+////////////////////////////////////Ikkje godkjente inpasseringsforsøk(NY QUERY!!)///////////////////////////////////////////
 
 SELECT rom_id, kort_id, tidspunkt, adgang  
 FROM adgangsforesporsler
@@ -127,14 +127,14 @@ WHERE rom_id = 'a201' AND adgang = FALSE
 
 
 
-//Alarmar mellom 2 datoar(NY QUERY!!)
+///////////////////////////////////////////Alarmar mellom 2 datoar(NY QUERY!!)///////////////////////////////////////////
 
 SELECT alarmlogg.rom_id, alarmlogg.alarm_id, alarmlogg.tidspunkt, alarminfo.alarmbeskrivelse  
 FROM alarmlogg,alarminfo
 WHERE alarmlogg.tidspunkt >'2020-09-07T12:15:00Z' AND alarmlogg.tidspunkt < '2025-09-07T12:15:00Z'
 
 
-//Brukstid rom(NY QUERY!!)
+/////////////////////////////////////////////Brukstid rom(NY QUERY!!)///////////////////////////////////////////
 
 SELECT rom_id, min(tidspunkt), max(tidspunkt)
 FROM adgangsforesporsler
