@@ -18,7 +18,7 @@ CREATE TABLE "kortleser" (
 CREATE TABLE "adgangsforesporsler" (
   "rom_id" VARCHAR(4),
   "kort_id" VARCHAR(4),
-  "adgang?" BOOL,
+  "adgang" BOOL,
   "tidspunkt" TIMESTAMP NOT NULL,
   PRIMARY KEY ("rom_id", "tidspunkt"),
   CONSTRAINT "FK_adgangsforesporsler.kortleser"
@@ -42,4 +42,3 @@ CREATE TABLE "alarminfo" (
   "alarmbeskrivelse" VARCHAR(30),
   PRIMARY KEY ("alarm_id")
 );
-
