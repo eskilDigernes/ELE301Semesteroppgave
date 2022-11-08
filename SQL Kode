@@ -1,0 +1,45 @@
+CREATE TABLE "brukerinfo" (
+  "kort_id" VARCHAR(4),
+  "pinkode" VARCHAR(4),
+  "etternavn" CHAR(15),
+  "fornavn" CHAR(15),
+  "epost" VARCHAR(30),
+  "startdato" TIMESTAMP NOT NULL,
+  "sluttdato" TIMESTAMP NOT NULL,
+  PRIMARY KEY ("kort_id")
+);
+
+CREATE TABLE "kortleser" (
+  "rom_id" VARCHAR(4),
+  "lesernummer" VARCHAR(4),
+  PRIMARY KEY ("rom_id")
+);
+
+CREATE TABLE "adgangsforesporsler" (
+  "rom_id" VARCHAR(4),
+  "kort_id" VARCHAR(4),
+  "adgang?" BOOL,
+  "tidspunkt" TIMESTAMP NOT NULL,
+  PRIMARY KEY ("rom_id", "tidspunkt"),
+  CONSTRAINT "FK_adgangsforesporsler.kortleser"
+  FOREIGN KEY ("rom_id")  
+  REFERENCES "kortleser"("rom_id")
+);
+
+CREATE TABLE "alarmlogg" (
+  "rom_id" VARCHAR(4),
+  "kort_id" VARCHAR(4),
+  "alarm_id" INT,
+  "tidspunkt" TIMESTAMP NOT NULL,
+  PRIMARY KEY ("tidspunkt", "rom_id"),
+  CONSTRAINT "FK_alarmlogg.kort_id"
+    FOREIGN KEY ("kort_id")
+      REFERENCES "brukerinfo"("kort_id")
+);
+
+CREATE TABLE "alarminfo" (
+  "alarm_id" INT,
+  "alarmbeskrivelse" VARCHAR(30),
+  PRIMARY KEY ("alarm_id")
+);
+
