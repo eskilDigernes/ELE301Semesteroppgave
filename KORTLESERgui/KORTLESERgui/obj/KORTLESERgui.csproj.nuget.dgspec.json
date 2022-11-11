@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eskil\\OneDrive\\Skrivebord\\KORTLESERgui\\KORTLESERgui\\KORTLESERgui.csproj": {}
+    "C:\\Users\\Justin Credible\\Documents\\GitHub\\ELE301Semesteroppgave\\KORTLESERgui\\KORTLESERgui\\KORTLESERgui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eskil\\OneDrive\\Skrivebord\\KORTLESERgui\\KORTLESERgui\\KORTLESERgui.csproj": {
+    "C:\\Users\\Justin Credible\\Documents\\GitHub\\ELE301Semesteroppgave\\KORTLESERgui\\KORTLESERgui\\KORTLESERgui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eskil\\OneDrive\\Skrivebord\\KORTLESERgui\\KORTLESERgui\\KORTLESERgui.csproj",
+        "projectUniqueName": "C:\\Users\\Justin Credible\\Documents\\GitHub\\ELE301Semesteroppgave\\KORTLESERgui\\KORTLESERgui\\KORTLESERgui.csproj",
         "projectName": "KORTLESERgui",
-        "projectPath": "C:\\Users\\eskil\\OneDrive\\Skrivebord\\KORTLESERgui\\KORTLESERgui\\KORTLESERgui.csproj",
-        "packagesPath": "C:\\Users\\eskil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eskil\\OneDrive\\Skrivebord\\KORTLESERgui\\KORTLESERgui\\obj\\",
+        "projectPath": "C:\\Users\\Justin Credible\\Documents\\GitHub\\ELE301Semesteroppgave\\KORTLESERgui\\KORTLESERgui\\KORTLESERgui.csproj",
+        "packagesPath": "C:\\Users\\Justin Credible\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Justin Credible\\Documents\\GitHub\\ELE301Semesteroppgave\\KORTLESERgui\\KORTLESERgui\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\eskil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Justin Credible\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

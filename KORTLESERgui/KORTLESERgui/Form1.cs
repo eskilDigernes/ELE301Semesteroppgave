@@ -14,6 +14,9 @@ namespace KORTLESERgui
         SerialPort sp;
         string enMelding;
         string data;
+        public string pin = "";
+        public string validering = "";
+        public string kortlesernr = "";
 
         /*Variabler for sentral*/
         bool ferdig;
@@ -105,36 +108,67 @@ namespace KORTLESERgui
                 MessageBox.Show("Feil: " + err.ToString());
             }
         }
-
+        
         private void btnLoggInn_Click(object sender, EventArgs e)
         {
-            if (cbAlleSeriellePorter.SelectedIndex >= 0)
+            if (txtKortlesernr.Text.Length == 4)
             {
-                string comPort = cbAlleSeriellePorter.SelectedItem.ToString();
-                btnLoggInn.Enabled = false;
-                btnAvbryt.Enabled = true;
-                kommuniser = true;
-
-                sp = new SerialPort(comPort, 9600);
-
-                try
+                kortlesernr = txtKortlesernr.Text;
+                if (cbAlleSeriellePorter.SelectedIndex >= 0)
                 {
-                    sp.Open();
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show("Feil: " + err.ToString());
-                    btnLoggInn.Enabled = true;
-                    btnAvbryt.Enabled = false;
-                }
+                    string comPort = cbAlleSeriellePorter.SelectedItem.ToString();
+                    btnLoggInn.Enabled = false;
+                    btnAvbryt.Enabled = true;
+                    kommuniser = true;
 
-                if (sp.IsOpen)
-                {
-                    SendEnMelding(sp, "$S002");
-                    bwSeriellKommunikasjon.RunWorkerAsync();
+                    sp = new SerialPort(comPort, 9600);
+
+                    try
+                    {
+                        sp.Open();
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("Feil: " + err.ToString());
+                        btnLoggInn.Enabled = true;
+                        btnAvbryt.Enabled = false;
+                    }
+
+                    if (sp.IsOpen)
+                    {
+                        SendEnMelding(sp, "$S002");
+                        bwSeriellKommunikasjon.RunWorkerAsync();
+                    }
                 }
             }
+            
         }
+
+        public void analyserKode(string kode)
+        {
+            int indexD = kode.IndexOf('D');
+            
+            if (kode[indexD + 1] == '1') pin += '0';
+            else if (kode[indexD + 2] == '1') pin += '1';
+            else if (kode[indexD + 3] == '1') pin += '2';
+            else if (kode[indexD + 4] == '1') pin += '3';
+            txtPIN.Text = pin;
+            if (pin.Length == 4 && txtKortID.Text.Length == 4)
+            {
+                validering = $"{txtKortID.Text}${pin}${kortlesernr}";
+            }
+        }
+
+        private string valider()
+        {
+            string validering = "";
+            if (pin.Length == 4 && txtKortID.Text.Length == 4)
+            {
+                validering = $"{txtKortID.Text}${pin}${kortlesernr}";
+            }
+            return validering;
+        }
+
         private void bwSeriellKommunikasjon_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             // Utføres av en hjelpetråd når RunWorkerAsync-brukes
@@ -161,6 +195,7 @@ namespace KORTLESERgui
             if (kommuniser)
             {
                 OppdaterGUI(enMelding);
+                analyserKode(enMelding);
                 bwSeriellKommunikasjon.RunWorkerAsync();
             }
         }
@@ -216,15 +251,14 @@ namespace KORTLESERgui
         static void SendTekst(Socket kommSokkel, string tekstSomSkalSendes, out bool feilHarOppstått)
         {
             feilHarOppstått = false;
-
             try
             {
-                byte[] data = new byte[1024];
-                int antallBytesMottatt = kommSokkel.Receive(data);
+                byte[] data = Encoding.ASCII.GetBytes(tekstSomSkalSendes);
+                kommSokkel.Send(data, data.Length, SocketFlags.None);
             }
-            catch (Exception err)
+            catch (Exception unntak)
             {
-                MessageBox.Show("Feil: " + err.ToString());
+                MessageBox.Show("Feil: " + unntak.ToString());
                 feilHarOppstått = true;
             }
         }
@@ -234,6 +268,7 @@ namespace KORTLESERgui
             btnSendMelding.Enabled = false;
             bwHjelpetråd.RunWorkerAsync();
         }
+
         private void Klient_Load(object sender, EventArgs e)
         {
             klientSokkel = KobleTilServer(out ferdig);
@@ -246,11 +281,10 @@ namespace KORTLESERgui
             }
         }
 
-
         private void bwHjelpetråd_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             // Arbeid som utføres i en hjelpetråd
-            if (!ferdig) SendTekst(klientSokkel, txtTekstSomSkalSendes.Text, out ferdig);
+            if (!ferdig) SendTekst(klientSokkel, validering, out ferdig);
             if (!ferdig)
             {
                 dataFraServer = MottaTekst(klientSokkel, out ferdig);
@@ -260,7 +294,7 @@ namespace KORTLESERgui
         private void bwHjelpetråd_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             // Arbeid som utføres av GUI-tråden når bwHjelpetråd_DoWork har avsluttet
-            if (!ferdig) txtMottattTekst.Text = dataFraServer;
+            if (!ferdig) txtTekstSomSkalSendes.Text = dataFraServer;
             btnSendMelding.Enabled = true;
         }
     }

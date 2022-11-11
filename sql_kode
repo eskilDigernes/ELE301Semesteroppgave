@@ -1,0 +1,165 @@
+///////////////////////////////////////////lag tabellar///////////////////////////////////////////
+
+
+
+DROP TABLE IF EXISTS "brukerinfo" CASCADE;
+CREATE TABLE "brukerinfo" (
+  "kort_id" VARCHAR(4),
+  "pinkode" VARCHAR(4),
+  "etternavn" CHAR(15),
+  "fornavn" CHAR(15),
+  "epost" VARCHAR(30),
+  "startdato" TIMESTAMP NOT NULL,
+  "sluttdato" TIMESTAMP NOT NULL,
+  PRIMARY KEY ("kort_id")
+);
+
+DROP TABLE IF EXISTS "kortleser" CASCADE;
+CREATE TABLE "kortleser" (
+  "rom_id" VARCHAR(4),
+  "lesernummer" VARCHAR(4),
+  PRIMARY KEY ("rom_id")
+);
+
+DROP TABLE IF EXISTS "adgangsforesporsler" CASCADE;
+CREATE TABLE "adgangsforesporsler" (
+  "rom_id" VARCHAR(4),
+  "kort_id" VARCHAR(4),
+  "adgang" BOOL,
+  "tidspunkt" TIMESTAMP NOT NULL,
+  PRIMARY KEY ("rom_id", "tidspunkt"),
+  CONSTRAINT "FK_adgangsforesporsler.kortleser"
+  FOREIGN KEY ("rom_id")  
+  REFERENCES "kortleser"("rom_id")
+);
+
+DROP TABLE IF EXISTS "alarmlogg" CASCADE;
+CREATE TABLE "alarmlogg" (
+  "rom_id" VARCHAR(4),
+  "kort_id" VARCHAR(4),
+  "alarm_id" INT,
+  "tidspunkt" TIMESTAMP NOT NULL,
+  PRIMARY KEY ("tidspunkt", "rom_id"),
+  CONSTRAINT "FK_alarmlogg.kort_id"
+    FOREIGN KEY ("kort_id")
+      REFERENCES "brukerinfo"("kort_id")
+);
+
+DROP TABLE IF EXISTS "alarminfo" CASCADE;
+CREATE TABLE "alarminfo" (
+  "alarm_id" INT,
+  "alarmbeskrivelse" VARCHAR(30),
+  PRIMARY KEY ("alarm_id")
+);
+
+
+
+/////////////////////////////////////legg til rader i tabellar(NY QUERY!)///////////////////////
+
+
+
+INSERT INTO brukerinfo
+(kort_id, pinkode, etternavn, fornavn, epost,startdato, sluttdato)
+VALUES (1001, 6969, 'Petersson','Emil', 'EmilP@hvl.no', '2021-09-07T12:15:00Z', '2024-04-07T12:15:00Z' );
+
+INSERT INTO brukerinfo
+(kort_id, pinkode, etternavn, fornavn, epost,startdato, sluttdato)
+VALUES (1002, 9696, 'Utkilen', 'Jostein' , 'JosteinU@hvl.no', '2021-09-07T12:15:00Z', '2024-09-07T12:15:00Z' );
+
+INSERT INTO brukerinfo
+(kort_id, pinkode, etternavn, fornavn, epost,startdato, sluttdato)
+VALUES (1003, 0420, 'Trengereid', 'Kim', 'KimT@hvl.no', '2021-09-07T12:15:00Z', '2024-06-07T12:15:00Z' );
+
+INSERT INTO kortleser (rom_id, lesernummer)
+VALUES('d420', 1);
+
+INSERT INTO kortleser (rom_id, lesernummer)
+VALUES('a201', 1);
+
+INSERT INTO kortleser (rom_id, lesernummer)
+VALUES('f303', 1);
+
+INSERT INTO adgangsforesporsler (rom_id, kort_id, adgang, tidspunkt)
+VALUES('d420', 1002, TRUE,'2022-01-17T09:15:00Z' );
+
+INSERT INTO adgangsforesporsler (rom_id, kort_id, adgang, tidspunkt)
+VALUES('a201', 1002, FALSE,'2022-02-03T11:15:00Z' );
+
+INSERT INTO adgangsforesporsler (rom_id, kort_id, adgang, tidspunkt)
+VALUES('f303', 1002, TRUE,'2022-02-03T12:11:00Z' );
+
+INSERT INTO alarmlogg (rom_id, kort_id, alarm_id, tidspunkt)
+VALUES('m103', 1003, 3,'2021-11-07T14:15:00Z' );
+
+INSERT INTO alarmlogg (rom_id, kort_id, alarm_id, tidspunkt)
+VALUES('a203', 1001, 3,'2022-02-21T10:05:00Z' );
+
+INSERT INTO alarmlogg (rom_id, kort_id, alarm_id, tidspunkt)
+VALUES('a203', 1002, 1,'2022-02-21T10:12:00Z' );
+
+INSERT INTO alarmlogg (rom_id, kort_id, alarm_id, tidspunkt)
+VALUES('a203', 1003, 2,'2022-09-07T10:15:00Z' );
+
+INSERT INTO alarminfo (alarm_id, alarmbeskrivelse)
+VALUES(1, 'Dør brutt opp!');
+
+INSERT INTO alarminfo (alarm_id, alarmbeskrivelse)
+VALUES(2, 'Feil kode!');
+
+INSERT INTO alarminfo (alarm_id, alarmbeskrivelse)
+VALUES(3, 'Ingen adgang!');
+
+
+
+/////////////////////////////////////Få tak i brukerdata(NY QUERY!!)//////////////////////////
+
+
+
+SELECT * FROM brukerinfo
+WHERE kort_id::INT = 1001
+
+
+
+///////////////////////////////////////Få tak i adgangslogg(NY QUERY!!)///////////////////////
+
+
+
+SELECT brukerinfo.kort_id, adgangsforesporsler.rom_id, adgangsforesporsler.tidspunkt,
+adgangsforesporsler.adgang 
+FROM brukerinfo, adgangsforesporsler
+WHERE brukerinfo.kort_id::INT = 1001 AND
+((adgangsforesporsler.tidspunkt >'2020-09-07T12:15:00Z') AND
+ (adgangsforesporsler.tidspunkt < '2025-09-07T12:15:00Z'))
+
+
+
+////////////////////////////////////Ikkje godkjente inpasseringsforsøk(NY QUERY!!)///////////////////
+
+
+
+SELECT rom_id, kort_id, tidspunkt, adgang  
+FROM adgangsforesporsler
+WHERE rom_id = 'a201' AND adgang = FALSE 
+
+
+
+
+///////////////////////////////////////////Alarmar mellom 2 datoar(NY QUERY!!)//////////////////////
+
+
+
+SELECT alarmlogg.rom_id, alarmlogg.alarm_id, alarmlogg.tidspunkt, alarminfo.alarmbeskrivelse  
+FROM alarmlogg,alarminfo
+WHERE alarmlogg.tidspunkt >'2020-09-07T12:15:00Z' AND 
+alarmlogg.tidspunkt < '2025-09-07T12:15:00Z'
+
+
+
+/////////////////////////////////////////////Brukstid rom(NYQUERY!!)//////////////////////////// 
+
+
+
+SELECT rom_id, min(tidspunkt), max(tidspunkt)
+FROM adgangsforesporsler
+WHERE rom_id = 'f303'
+GROUP BY rom_id

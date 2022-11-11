@@ -50,11 +50,13 @@
             this.txtMottattTekst = new System.Windows.Forms.TextBox();
             this.txtTekstSomSkalSendes = new System.Windows.Forms.TextBox();
             this.bwHjelpetråd = new System.ComponentModel.BackgroundWorker();
+            this.txtKortlesernr = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoggInn
             // 
-            this.btnLoggInn.Location = new System.Drawing.Point(848, 163);
+            this.btnLoggInn.Location = new System.Drawing.Point(848, 236);
             this.btnLoggInn.Name = "btnLoggInn";
             this.btnLoggInn.Size = new System.Drawing.Size(92, 50);
             this.btnLoggInn.TabIndex = 0;
@@ -96,7 +98,7 @@
             // 
             // btnAvbryt
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(946, 163);
+            this.btnAvbryt.Location = new System.Drawing.Point(946, 236);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(92, 50);
             this.btnAvbryt.TabIndex = 0;
@@ -151,21 +153,21 @@
             // 
             // txtDørLåstUlåst
             // 
-            this.txtDørLåstUlåst.Location = new System.Drawing.Point(895, 396);
+            this.txtDørLåstUlåst.Location = new System.Drawing.Point(895, 469);
             this.txtDørLåstUlåst.Name = "txtDørLåstUlåst";
             this.txtDørLåstUlåst.Size = new System.Drawing.Size(80, 31);
             this.txtDørLåstUlåst.TabIndex = 8;
             // 
             // txtDørÅpenLukket
             // 
-            this.txtDørÅpenLukket.Location = new System.Drawing.Point(981, 396);
+            this.txtDørÅpenLukket.Location = new System.Drawing.Point(981, 469);
             this.txtDørÅpenLukket.Name = "txtDørÅpenLukket";
             this.txtDørÅpenLukket.Size = new System.Drawing.Size(80, 31);
             this.txtDørÅpenLukket.TabIndex = 8;
             // 
             // txtAlarm
             // 
-            this.txtAlarm.Location = new System.Drawing.Point(895, 445);
+            this.txtAlarm.Location = new System.Drawing.Point(895, 518);
             this.txtAlarm.Name = "txtAlarm";
             this.txtAlarm.Size = new System.Drawing.Size(80, 31);
             this.txtAlarm.TabIndex = 8;
@@ -173,7 +175,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(789, 399);
+            this.label6.Location = new System.Drawing.Point(789, 472);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 25);
             this.label6.TabIndex = 9;
@@ -182,7 +184,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(897, 416);
+            this.label7.Location = new System.Drawing.Point(897, 489);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 25);
             this.label7.TabIndex = 9;
@@ -190,7 +192,7 @@
             // Alarm
             // 
             this.Alarm.AutoSize = true;
-            this.Alarm.Location = new System.Drawing.Point(804, 448);
+            this.Alarm.Location = new System.Drawing.Point(804, 521);
             this.Alarm.Name = "Alarm";
             this.Alarm.Size = new System.Drawing.Size(59, 25);
             this.Alarm.TabIndex = 9;
@@ -198,7 +200,7 @@
             // 
             // btnSendMelding
             // 
-            this.btnSendMelding.Location = new System.Drawing.Point(870, 252);
+            this.btnSendMelding.Location = new System.Drawing.Point(870, 325);
             this.btnSendMelding.Name = "btnSendMelding";
             this.btnSendMelding.Size = new System.Drawing.Size(168, 34);
             this.btnSendMelding.TabIndex = 10;
@@ -213,7 +215,7 @@
             // 
             // txtMottattTekst
             // 
-            this.txtMottattTekst.Location = new System.Drawing.Point(805, 292);
+            this.txtMottattTekst.Location = new System.Drawing.Point(805, 365);
             this.txtMottattTekst.Name = "txtMottattTekst";
             this.txtMottattTekst.ReadOnly = true;
             this.txtMottattTekst.Size = new System.Drawing.Size(233, 31);
@@ -221,7 +223,7 @@
             // 
             // txtTekstSomSkalSendes
             // 
-            this.txtTekstSomSkalSendes.Location = new System.Drawing.Point(804, 329);
+            this.txtTekstSomSkalSendes.Location = new System.Drawing.Point(804, 402);
             this.txtTekstSomSkalSendes.Name = "txtTekstSomSkalSendes";
             this.txtTekstSomSkalSendes.Size = new System.Drawing.Size(233, 31);
             this.txtTekstSomSkalSendes.TabIndex = 11;
@@ -231,11 +233,29 @@
             this.bwHjelpetråd.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwHjelpetråd_DoWork);
             this.bwHjelpetråd.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwHjelpetråd_RunWorkerCompleted);
             // 
+            // txtKortlesernr
+            // 
+            this.txtKortlesernr.Location = new System.Drawing.Point(848, 163);
+            this.txtKortlesernr.Name = "txtKortlesernr";
+            this.txtKortlesernr.Size = new System.Drawing.Size(190, 31);
+            this.txtKortlesernr.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(745, 169);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 25);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Kortlesernr";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1099, 578);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtKortlesernr);
             this.Controls.Add(this.txtTekstSomSkalSendes);
             this.Controls.Add(this.txtMottattTekst);
             this.Controls.Add(this.btnSendMelding);
@@ -257,7 +277,7 @@
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.btnLoggInn);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Kortleser";
             this.Load += new System.EventHandler(this.Klient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -287,5 +307,7 @@
         private System.ComponentModel.BackgroundWorker bwHjelpetråd;
         private TextBox txtMottattTekst;
         private TextBox txtTekstSomSkalSendes;
+        private TextBox txtKortlesernr;
+        private Label label8;
     }
 }

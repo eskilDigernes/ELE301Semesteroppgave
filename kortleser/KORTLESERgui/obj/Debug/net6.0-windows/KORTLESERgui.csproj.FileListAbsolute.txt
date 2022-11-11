@@ -1,0 +1,52 @@
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.exe
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.deps.json
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.runtimeconfig.json
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.dll
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.pdb
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.csproj.AssemblyReference.cache
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.AssemblyInfoInputs.cache
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.AssemblyInfo.cs
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.csproj.CoreCompileInputs.cache
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.dll
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\refint\KORTLESERgui.dll
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.pdb
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.genruntimeconfig.cache
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\ref\KORTLESERgui.dll
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.Form1.resources
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.csproj.GenerateResource.cache
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\System.IO.Ports.dll
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\System.IO.Ports.dll
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.IO.Ports.dll
+C:\Users\eskil\OneDrive\Skrivebord\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.csproj.CopyComplete
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.exe
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.deps.json
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.runtimeconfig.json
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.dll
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\KORTLESERgui.pdb
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\System.IO.Ports.dll
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\System.IO.Ports.dll
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.IO.Ports.dll
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.csproj.AssemblyReference.cache
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.Form1.resources
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.csproj.GenerateResource.cache
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.AssemblyInfoInputs.cache
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.AssemblyInfo.cs
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.csproj.CoreCompileInputs.cache
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.csproj.CopyComplete
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.dll
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\refint\KORTLESERgui.dll
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.pdb
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\KORTLESERgui.genruntimeconfig.cache
+C:\Users\Justin Credible\Documents\GitHub\ELE301Semesteroppgave\KORTLESERgui\KORTLESERgui\obj\Debug\net6.0-windows\ref\KORTLESERgui.dll
