@@ -17,6 +17,7 @@ namespace KORTLESERgui
         public string pin = "";
         public string validering = "";
         public string kortlesernr = "";
+        public string kortid = "";
 
         /*Variabler for sentral*/
         bool ferdig;
@@ -114,32 +115,7 @@ namespace KORTLESERgui
             if (txtKortlesernr.Text.Length == 4)
             {
                 kortlesernr = txtKortlesernr.Text;
-                if (cbAlleSeriellePorter.SelectedIndex >= 0)
-                {
-                    string comPort = cbAlleSeriellePorter.SelectedItem.ToString();
-                    btnLoggInn.Enabled = false;
-                    btnAvbryt.Enabled = true;
-                    kommuniser = true;
-
-                    sp = new SerialPort(comPort, 9600);
-
-                    try
-                    {
-                        sp.Open();
-                    }
-                    catch (Exception err)
-                    {
-                        MessageBox.Show("Feil: " + err.ToString());
-                        btnLoggInn.Enabled = true;
-                        btnAvbryt.Enabled = false;
-                    }
-
-                    if (sp.IsOpen)
-                    {
-                        SendEnMelding(sp, "$S002");
-                        bwSeriellKommunikasjon.RunWorkerAsync();
-                    }
-                }
+               
             }
             
         }
@@ -147,16 +123,31 @@ namespace KORTLESERgui
         public void analyserKode(string kode)
         {
             int indexD = kode.IndexOf('D');
-            
-            if (kode[indexD + 1] == '1') pin += '0';
-            else if (kode[indexD + 2] == '1') pin += '1';
-            else if (kode[indexD + 3] == '1') pin += '2';
-            else if (kode[indexD + 4] == '1') pin += '3';
-            txtPIN.Text = pin;
-            if (pin.Length == 4 && txtKortID.Text.Length == 4)
+
+            if (kode[indexD + 1] == '1') kortlesernr += '0';
+            else if (kode[indexD + 2] == '1') kortlesernr += '1';
+            else if (kode[indexD + 3] == '1') kortlesernr += '2';
+            else if (kode[indexD + 4] == '1') kortlesernr += '3';
+
+            if (txtKortlesernr.Text.Length == 4)
             {
-                validering = $"{txtKortID.Text}${pin}${kortlesernr}";
+                if (kode[indexD + 1] == '1') kortid += '0';
+                else if (kode[indexD + 2] == '1') kortid += '1';
+                else if (kode[indexD + 3] == '1') kortid += '2';
+                else if (kode[indexD + 4] == '1') kortid += '3';
+                txtKortID.Text = kortid;
             }
+            else if (txtKortlesernr.Text.Length == 4 && txtKortID.Text.Length == 4)
+                if (kode[indexD + 1] == '1') pin += '0';
+                else if (kode[indexD + 2] == '1') pin += '1';
+                else if (kode[indexD + 3] == '1') pin += '2';
+                else if (kode[indexD + 4] == '1') pin += '3';
+                txtPIN.Text = pin;
+
+                if (pin.Length == 4 && txtKortID.Text.Length == 4)
+                {
+                    validering = $"{txtKortID.Text}${pin}${kortlesernr}";
+                }
         }
 
         private string valider()
@@ -200,14 +191,7 @@ namespace KORTLESERgui
             }
         }
 
-        private void btnAvbryt_Click(object sender, EventArgs e)
-        {
-            btnAvbryt.Enabled = false;
-            kommuniser = false;
-            hjelpetråd.Join();
-            btnAvbryt.Enabled = true;
-        }
-
+        
         /****************Klient*************************/
         static Socket KobleTilServer(out bool ferdig)
         {
@@ -283,6 +267,30 @@ namespace KORTLESERgui
 
         private void bwHjelpetråd_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            if (cbAlleSeriellePorter.SelectedIndex >= 0)
+            {
+                string comPort = cbAlleSeriellePorter.SelectedItem.ToString();
+
+                kommuniser = true;
+
+                sp = new SerialPort(comPort, 9600);
+
+                try
+                {
+                    sp.Open();
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("Feil: " + err.ToString());
+
+                }
+
+                if (sp.IsOpen)
+                {
+                    SendEnMelding(sp, "$S002");
+                    bwSeriellKommunikasjon.RunWorkerAsync();
+                }
+            }
             // Arbeid som utføres i en hjelpetråd
             if (!ferdig) SendTekst(klientSokkel, validering, out ferdig);
             if (!ferdig)

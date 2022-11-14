@@ -224,19 +224,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Justin Credible\\.nuget\\packages\\": {}
+    "C:\\Users\\Asbjo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Justin Credible\\Documents\\GitHub\\prosjekt_ele301\\kortleser\\KORTLESERgui\\KORTLESERgui.csproj",
+      "projectUniqueName": "C:\\Users\\Asbjo\\Documents\\GitHub\\ELE301Semesteroppgave\\kortleser\\KORTLESERgui\\KORTLESERgui.csproj",
       "projectName": "KORTLESERgui",
-      "projectPath": "C:\\Users\\Justin Credible\\Documents\\GitHub\\prosjekt_ele301\\kortleser\\KORTLESERgui\\KORTLESERgui.csproj",
-      "packagesPath": "C:\\Users\\Justin Credible\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Justin Credible\\Documents\\GitHub\\prosjekt_ele301\\kortleser\\KORTLESERgui\\obj\\",
+      "projectPath": "C:\\Users\\Asbjo\\Documents\\GitHub\\ELE301Semesteroppgave\\kortleser\\KORTLESERgui\\KORTLESERgui.csproj",
+      "packagesPath": "C:\\Users\\Asbjo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asbjo\\Documents\\GitHub\\ELE301Semesteroppgave\\kortleser\\KORTLESERgui\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Justin Credible\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asbjo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -286,7 +286,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
